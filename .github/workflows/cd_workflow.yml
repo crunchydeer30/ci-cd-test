@@ -40,4 +40,4 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           host: ${{ secrets.SSH_HOST }}
           password: ${{ secrets.SSH_PASSWORD }}
-          script: "cd ${{ secrets.SSH_WORKDIR }} && docker compose pull && docker compose up -d"
+          script: "echo ${{ secrets.SSH_PASSWORD }} | sudo -S cd ${{ secrets.SSH_WORKDIR }} && sudo docker compose pull && docker compose up -d"
