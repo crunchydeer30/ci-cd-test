@@ -29,3 +29,14 @@ jobs:
         run: |
           docker compose build
           docker compose push
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          username: ${{ secrets.SSH_USERNAME }}
+          host: ${{ secrets.SSH_HOST }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: "cd ${{ secrets.SSH_WORKDIR }} && echo ${{ secrets.ENV_PROD }} > .env && docker compose pull && docker compose up -d && exit"
