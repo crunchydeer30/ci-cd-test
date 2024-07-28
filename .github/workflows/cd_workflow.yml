@@ -40,4 +40,4 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           host: ${{ secrets.SSH_HOST }}
           password: ${{ secrets.SSH_PASSWORD }}
-          script: "cd ${{ secrets.SSH_WORKDIR }} && echo ${{ secrets.ENV_PROD }} > .env && docker compose pull && docker compose up -d && exit"
+          script: "cd ${{ secrets.SSH_WORKDIR }} && ls -la"
