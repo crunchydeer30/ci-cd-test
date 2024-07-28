@@ -39,6 +39,7 @@ services:
     container_name: gm_rabbitmq
 
   products:
+    image: ghcr.io/crunchydeer30/gm_products
     build:
       dockerfile: Dockerfile
       context: ./products
@@ -55,6 +56,7 @@ services:
     container_name: gm_products
 
   customer:
+    image: ghcr.io/crunchydeer30/gm_customer
     build:
       dockerfile: Dockerfile
       context: ./customer
@@ -71,6 +73,7 @@ services:
     container_name: gm_customer
 
   shopping:
+    image: ghcr.io/crunchydeer30/gm_shopping
     build:
       dockerfile: Dockerfile
       context: ./shopping
