@@ -1,0 +1,81 @@
+services:
+  nginx:
+    image: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - mongo
+      - rabbitmq
+      - products
+      - customer
+      - shopping
+    container_name: gm_nginx
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./db/:/data/db
+    container_name: gm_mongo
+
+  rabbitmq:
+    image: rabbitmq:management-alpine
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    env_file:
+      - .env
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    container_name: gm_rabbitmq
+
+  products:
+    build:
+      dockerfile: Dockerfile
+      context: ./products
+    env_file:
+      - .env
+    environment:
+      PORT: ${PRODUCTS_PORT}
+    ports:
+      - ${PRODUCTS_PORT}:${PRODUCTS_PORT}
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    container_name: gm_products
+
+  customer:
+    build:
+      dockerfile: Dockerfile
+      context: ./customer
+    env_file:
+      - .env
+    environment:
+      PORT: ${CUSTOMER_PORT}
+    ports:
+      - ${CUSTOMER_PORT}:${CUSTOMER_PORT}
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    container_name: gm_customer
+
+  shopping:
+    build:
+      dockerfile: Dockerfile
+      context: ./shopping
+    env_file:
+      - .env
+    environment:
+      PORT: ${SHOPPING_PORT}
+    ports:
+      - ${SHOPPING_PORT}:${SHOPPING_PORT}
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    container_name: gm_shopping
