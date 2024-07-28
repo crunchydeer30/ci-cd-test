@@ -136,6 +136,7 @@ module.exports = (app, channel) => {
     //check validation
     try {
       const { data } = await service.GetProducts();
+      data.test = "test";
       return res.status(200).json(data);
     } catch (error) {
       return res.status(404).json({ error });
