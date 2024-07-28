@@ -1,12 +1,3 @@
-on:
-  push:
-    branches:
-      - main
-
-env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}:latest
-
 jobs:
   build:
     name: Build docker image
@@ -40,4 +31,4 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           host: ${{ secrets.SSH_HOST }}
           password: ${{ secrets.SSH_PASSWORD }}
-          script: "cd ${{ secrets.SSH_WORKDIR }} && echo ${{ secrets.SSH_PASSWORD }} | sudo -S sudo docker compose pull && echo ${{ secrets.SSH_PASSWORD }} | sudo -S docker compose up -d"
+          script: "cd ${{ secrets.SSH_WORKDIR }} && docker compose pull && docker compose up -d"
