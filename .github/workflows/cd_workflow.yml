@@ -30,7 +30,7 @@ jobs:
           images: ghcr.io/crunchydeer30/gm_shopping
           tags: |
             type=semver,pattern={{version}}
-
+      #
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
