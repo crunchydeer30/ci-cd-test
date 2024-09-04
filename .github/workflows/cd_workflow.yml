@@ -10,12 +10,11 @@ jobs:
       pull-requests: write
       contents: write
     steps:
-      - uses: google-github-actions/release-please-action@v4
+      - uses: googleapis/release-please-action
         with:
           release-type: simple
           token: ${{ secrets.GITHUB_TOKEN }}
 
-  # dummy
   # build:
   #   name: Build docker image
   #   runs-on: ubuntu-latest
