@@ -36,5 +36,5 @@ jobs:
         with:
           context: ./shopping
           push: true
-          tags: main
+          tags: ghcr.io/crunchydeer30/gm_shopping:1.0.0
           labels: ${{ steps.meta.outputs.labels }}
