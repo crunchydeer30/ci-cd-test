@@ -33,7 +33,7 @@ jobs:
 
       - name: "shopping:build"
         working-directory: ./shopping
-        run: docker build . --tag ${{steps.shopping-meta.outputs.tags}} --label ${{ steps.shopping-meta.outputs.labels }}
+        run: docker build . --tag ${{steps.shopping-meta.outputs.tags}}
 
       - name: "shopping:push"
         working-directory: ./shopping
