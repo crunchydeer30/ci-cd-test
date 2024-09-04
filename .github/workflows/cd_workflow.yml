@@ -4,10 +4,10 @@ on:
       - main
 
 jobs:
-  permissions:
-    pull-requests: write
   release-please:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - uses: google-github-actions/release-please-action@v3
         with:
