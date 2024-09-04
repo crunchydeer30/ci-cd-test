@@ -32,7 +32,7 @@ jobs:
             type=semver,pattern={{version}}
 
       - name: "shopping:build"
-        run: docker build ./shopping --tag ${{steps.shopping-meta.outputs.tags}}
+        run: docker build ./shopping --tag ${{steps.shopping-meta.outputs.tags[0]}}
 
       - name: "shopping:push"
         working-directory: shopping
