@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/crunchydeer30/ci-cd-test/compare/v1.3.0...v1.4.0) (2024-09-04)
+
+
+### Features
+
+* change workflows ([4a7d6f5](https://github.com/crunchydeer30/ci-cd-test/commit/4a7d6f5b776714860854fa458e4cf74190ab6466))
+
 ## [1.3.0](https://github.com/crunchydeer30/ci-cd-test/compare/v1.2.0...v1.3.0) (2024-09-04)
 
 
