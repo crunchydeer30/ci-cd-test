@@ -4,6 +4,8 @@ on:
       - main
 
 jobs:
+  permissions:
+    pull-requests: write
   release-please:
     runs-on: ubuntu-latest
     steps:
