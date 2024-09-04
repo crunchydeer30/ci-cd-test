@@ -10,7 +10,7 @@ jobs:
       pull-requests: write
       contents: write
     steps:
-      - uses: googleapis/release-please-action
+      - uses: google-github-actions/release-please-action@v4
         with:
           release-type: simple
           token: ${{ secrets.GITHUB_TOKEN }}
