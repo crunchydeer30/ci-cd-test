@@ -23,18 +23,19 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.PAT }}
 
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
+      - name: "shopping:meta"
+        id: shopping-meta
         uses: docker/metadata-action@v5
         with:
+          context: ./shopping
           images: ghcr.io/crunchydeer30/gm_shopping
           tags: |
             type=semver,pattern={{version}}
 
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v4
-        with:
-          context: ./shopping
-          push: true
-          tags: ${{steps.meta.outputs.tags}}
-          labels: ${{ steps.meta.outputs.labels }}
+      - name: "shopping:build"
+        working-directory: ./shopping
+        run: docker build . --tag ${{steps.shopping-meta.outputs.tags}} --label ${{ steps.shopping-meta.outputs.labels }}
+
+      - name: "shopping:push"
+        working-directory: ./shopping
+        run: docker push ${{steps.shopping-meta.outputs.tags}}
