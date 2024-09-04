@@ -37,4 +37,4 @@ jobs:
 
       - name: "shopping:push"
         working-directory: ./shopping
-        run: docker push  ${{steps.shopping-meta.outputs.tags}}
+        run: docker push ghcr.io/crunchydeer30/gm_test_shopping
