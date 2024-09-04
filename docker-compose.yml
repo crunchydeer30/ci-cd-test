@@ -71,7 +71,7 @@ services:
     container_name: gm_customer
 
   shopping:
-    image: ghcr.io/crunchydeer30/gm_shopping
+    image: ghcr.io/crunchydeer30/gm_shoppinga
     build:
       dockerfile: Dockerfile
       context: ./shopping
