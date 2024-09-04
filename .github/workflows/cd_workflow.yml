@@ -32,9 +32,9 @@ jobs:
             type=semver,pattern={{version}}
 
       - name: "shopping:build"
-        working-directory: ./shopping
+        working-directory: shopping
         run: docker build . --tag ${{steps.shopping-meta.outputs.tags}}
 
       - name: "shopping:push"
-        working-directory: ./shopping
+        working-directory: shopping
         run: docker push ghcr.io/crunchydeer30/gm_test_shopping
