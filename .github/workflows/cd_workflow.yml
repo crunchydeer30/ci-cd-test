@@ -15,7 +15,7 @@ jobs:
           bump-patch-for-minor-pre-major: true
           token: ${{ secrets.GITHUB_TOKEN }}
 
-  #
+  # dummy
   # build:
   #   name: Build docker image
   #   runs-on: ubuntu-latest
