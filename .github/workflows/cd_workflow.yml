@@ -36,5 +36,5 @@ jobs:
         with:
           context: ./shopping
           push: true
-          tags: "1.2"
+          tags: main
           labels: ${{ steps.meta.outputs.labels }}
