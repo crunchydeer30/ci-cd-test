@@ -31,9 +31,10 @@ jobs:
           tags: |
             type=semver,pattern={{version}}
 
-      - name: "shopping:build"
-        run: echo ${{steps.shopping-meta.outputs.tags}} && docker build ./shopping --tag ${{steps.shopping-meta.outputs.tags}}
-
-      - name: "shopping:push"
-        working-directory: shopping
-        run: docker push ghcr.io/crunchydeer30/gm_test_shopping
+      - name: shoping:build
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          context: "{{defaultContext}}:shopping"
+          tags: ${{steps.shopping-meta.outputs.tags}}
+          labels: ${{steps.shopping-meta.outputs.labels}}
