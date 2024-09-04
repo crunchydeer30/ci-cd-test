@@ -27,8 +27,7 @@ jobs:
         id: shopping-meta
         uses: docker/metadata-action@v5
         with:
-          context: ./shopping
-          images: ghcr.io/crunchydeer30/gm_shopping
+          images: ghcr.io/crunchydeer30/gm_test_shopping
           tags: |
             type=semver,pattern={{version}}
 
