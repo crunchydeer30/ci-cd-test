@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/crunchydeer30/ci-cd-test/compare/v1.5.0...v1.6.0) (2024-09-04)
+
+
+### Features
+
+* change cd ([3c15431](https://github.com/crunchydeer30/ci-cd-test/commit/3c15431bcec7700b087f19c83975cbb3365f72db))
+
 ## [1.5.0](https://github.com/crunchydeer30/ci-cd-test/compare/v1.4.0...v1.5.0) (2024-09-04)
 
 
