@@ -27,8 +27,7 @@ jobs:
         id: shopping-meta
         uses: docker/metadata-action@v5
         with:
-          context: ./shopping
-          images: ghcr.io/crunchydeer30/gm_shopping
+          images: ghcr.io/crunchydeer30/gm_shoppinga
           tags: |
             type=semver,pattern={{version}}
 
@@ -37,5 +36,4 @@ jobs:
         run: docker build . --tag ${{steps.shopping-meta.outputs.tags}} --label ${{ steps.shopping-meta.outputs.labels }}
 
       - name: "shopping:push"
-        working-directory: ./shopping
         run: docker push ${{steps.shopping-meta.outputs.tags}}
