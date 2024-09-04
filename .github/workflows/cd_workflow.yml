@@ -21,13 +21,13 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.PAT }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: "shopping:meta"
         id: shopping-meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/crunchydeer30/gm_test_shopping
+          images: ghcr.io/crunchydeer30/gm_public_shopping
           tags: |
             type=semver,pattern={{version}}
 
