@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.7.0](https://github.com/crunchydeer30/ci-cd-test/compare/v1.6.0...v1.7.0) (2024-09-05)
+
+
+### Features
+
+* change release workflow ([e516942](https://github.com/crunchydeer30/ci-cd-test/commit/e516942b05bc89fc53fd7969bfeb0001b76bc8ab))
+* change release workflow ([e516942](https://github.com/crunchydeer30/ci-cd-test/commit/e516942b05bc89fc53fd7969bfeb0001b76bc8ab))
+* change workflow ([a2fa1bb](https://github.com/crunchydeer30/ci-cd-test/commit/a2fa1bb2863c60bad0498eda3fa03991e927889a))
+* change workflow ([ae55e6a](https://github.com/crunchydeer30/ci-cd-test/commit/ae55e6a4641ea3e1047232f0d509317796a66650))
+* change workflow ([2d8ebbf](https://github.com/crunchydeer30/ci-cd-test/commit/2d8ebbffa58432b8ab035475d034fefd4edb2205))
+
 ## [1.6.0](https://github.com/crunchydeer30/ci-cd-test/compare/v1.5.0...v1.6.0) (2024-09-04)
 
 
